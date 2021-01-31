@@ -1,0 +1,11 @@
+<!-- Sidenav -->
+<app-sidebar></app-sidebar>
+<div class="main-content">
+  <!-- Top navbar -->
+  <app-navbar [loggedInUserName]="loggedInUserName" [isLoggedIn]="isLoggedIn" (userLoggedOut)="signOut()"></app-navbar><!--[loggedInUserName]="loggedInUserName"-->
+  <!-- Pages -->
+  <router-outlet></router-outlet>
+  <div class="container-fluid">
+    <app-footer></app-footer>
+  </div>
+</div>
