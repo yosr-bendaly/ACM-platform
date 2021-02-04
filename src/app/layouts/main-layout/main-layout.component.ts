@@ -1,5 +1,6 @@
 import { TokenStorageService } from 'src/app/services/token/token-storage.service';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -9,12 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class MainLayoutComponent implements OnInit {
 
   public loggedInUserName:string;
+
   public isLoggedIn=false;
-  constructor(private token:TokenStorageService) { }
+  public userToken:string;
+  constructor(private token:TokenStorageService,private userService:UserService) { }
 
   ngOnInit(): void {
-    if(this.token.getUser()!=null){
-      this.loggedInUserName=this.token.getUser().username;
+    //let token=this.token.getToken;
+    this.userToken=this.token.getToken();
+    if(this.userToken){
+      this.userService.getUserByToken().subscribe(user=>this.loggedInUserName=user.username)
       console.log(this.loggedInUserName);
       this.isLoggedIn=true;
     }

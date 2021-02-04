@@ -17,12 +17,19 @@ export class UserDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe((params)=> {//params defined in the path of routes
      // console.log('got the param as',params);
     // this.user=this.users.filter((user)=>{ return user.id===+params.id})[0];
-    this.userService.getUserById(+params['id']).subscribe(
+   /* this.userService.getUserById(+params['id']).subscribe(
       user=>this.user=user,
       err=>console.log("error:",err),
       ()=>alert('fetch of user details completed')
     );
+    */
+   this.userService.getUserByUserName(params['username']).subscribe(
+    user=>this.user=user,
+    err=>console.log("error:",err),
+    ()=>alert('fetch of user details completed')
+  );
     })
+    
    
   }
 

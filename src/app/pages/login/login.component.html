@@ -81,7 +81,7 @@
                 name="password"
                 
                 required
-                minlength="10"
+                minlength="6"
                 [(ngModel)]="form.password"
                 #password="ngModel"
                 
@@ -110,7 +110,7 @@
             </button>
             </div>
             <div *ngIf="isLoginFailed">
-              <h1>Invalid username or password Please try again</h1>
+              <h1>Login failed </h1><!--{{errorMessage}}-->
             </div>
           </form>
         </div>

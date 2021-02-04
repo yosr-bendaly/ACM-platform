@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
 
-const TOKEN_KEY = 'auth-token';
-const USER_KEY = 'auth-user';
+const TOKEN_KEY = 'accessToken';
+const TYPE_KEY = 'userType';
 
 @Injectable({
   providedIn: 'root'
@@ -23,13 +23,13 @@ export class TokenStorageService {
     return sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public saveUser(user): void {
-    window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  public saveType(userType): void {
+    window.sessionStorage.removeItem(TYPE_KEY);
+    window.sessionStorage.setItem(TYPE_KEY,userType );//JSON.stringify(userType)
     //json.stringify() converts a javascript object to a JavaScript Object Notation (JSON) string
   }
 
-  public getUser(): IUser {
-    return JSON.parse(sessionStorage.getItem(USER_KEY));
+  public getType(): string {
+    return sessionStorage.getItem(TYPE_KEY);//JSON.parse(...)
   }
 }

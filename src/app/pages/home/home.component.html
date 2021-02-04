@@ -36,7 +36,7 @@
 <div id="postcontainer" class="container-fluid mt--7">
   <div class="row">
     <div class="col-xl-12 mb-5 mb-xl-0">
-      <ng-template [appHasRole]="['admin']">
+      <ng-template [appHasRole]="['user','admin']">
         <div  class="card shadow">
       
       
@@ -86,18 +86,22 @@
               </div>
            
             </div>
-            <div class="row my-4">
+           
+              <div class="row my-4">
               <div class="col-12">
-                <div class="alert alert-success" *ngIf="userForm.submitted && isSuccessful">
+                <div class="alert alert-success" *ngIf="userForm.submitted"> <!--&& isSuccessful-->
                   Post submission succeeded !<br />
                 </div>
-                <div class="alert alert-warning" *ngIf="userForm.submitted && !isSuccessful">
+              <!--
+                  <div class="alert alert-warning" *ngIf="userForm.submitted && !isSuccessful">
                   Post submission failed!<br />{{ errorMessage }}
                 </div>
+              -->
                 
               </div>
         
             </div>
+        
             </form>
           </div>
         
@@ -124,7 +128,7 @@
           <div class="row align-items-center">
             <div class="col">
       -->
-      <div id="cardContainer" class="card bg-gradient-default shadow">
+      <div id="cardContainer" class="card shadow"><!---->
         <div class="card-header bg-transparent">
           <div class="row align-items-center">
 

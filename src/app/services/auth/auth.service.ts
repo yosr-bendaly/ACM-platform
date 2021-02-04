@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 //const AUTH_API = 'http://localhost:3000/loggedInUsers';
-const AUTH_API = 'http://192.168.1.63:9090/acm/person/signin';
+const AUTH_API = 'http://192.168.43.154:9090/acm/person/signin';
 //const IDENT_API=' http://localhost:3000/users';
-const IDENT_API='http://192.168.1.63:9090/acm/user/signup';
+const IDENT_API='http://192.168.43.154:9090/acm/user/signup';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };

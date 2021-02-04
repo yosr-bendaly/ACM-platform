@@ -18,7 +18,7 @@ export class HasRoleDirective {
 
   ngOnInit() {
     
-    if(this.appHasRole.includes('admin')){
+    if(this.appHasRole.includes(this.tokenStorage.getType())){//
        
       if (!this.isVisible) {
        

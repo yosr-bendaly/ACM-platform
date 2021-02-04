@@ -26,7 +26,7 @@ export const MainLayoutRoutes: Routes = [
     },
    // pathMatch:"prefix",
     children :[
-        {path:'id', component:UserDetailsComponent}]
+        {path:'username', component:UserDetailsComponent}]
     },
     {path: 'chat',          component: ChatComponent,canActivate:[AuthGuard] },
     { path: 'dashboard',      component: DashboardComponent }

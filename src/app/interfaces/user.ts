@@ -6,7 +6,8 @@ export interface IUser{
     password:string;
    // roles:Array<IRole>;
     key:number;
-    role:IRole;
+   // role:IRole;
+   score:number;
 
 }
 export interface IRole{

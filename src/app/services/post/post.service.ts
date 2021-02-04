@@ -5,7 +5,7 @@ import { throwError } from 'rxjs/internal/observable/throwError';
 import { IPost } from 'src/app/interfaces/post';
 
 
-const API_URL = 'http://localhost:3000/posts/';
+const API_URL = 'http://192.168.43.154:9090/acm/admin';
 const httpOptionsResponse = {
  // headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   responseType:'json'
@@ -27,8 +27,8 @@ export class PostService {
 The get() method takes two arguments; 
 the endpoint URL from which to fetch, and an options object that you can use to configure the request.
 default options: {observe: 'body', responseType: 'json'}*/
-getAllPosts(){
-  return this.http.get<IPost[]>(API_URL);
+getAllPost(){
+  return this.http.get<IPost[]>(API_URL+"/getAllPost");
 }
 /*When you pass an interface as a type parameter to the HttpClient.get() method, 
 you can use the RxJS map operator to transform the response data as needed by the UI. 
@@ -43,7 +43,7 @@ getPostById(id){
 
 }
   createPost(params):Observable<any>{
-    return this.http.post(API_URL , {
+    return this.http.post(API_URL+"/addPost" , {
      content:params.content
     }
     );
@@ -53,11 +53,13 @@ getPostById(id){
   updatePost(id:number,params:IPost):Observable<any>{
     return this.http.put(`${API_URL }/update/${id}`, params);
   }
+  /*
   deletePost(id: number): Observable<{}> {
     const url = `${API_URL}/${id}`; 
     return this.http.delete(url)
-      
+     
     
    
   }
+  */ 
 }

@@ -5,8 +5,8 @@ import { IUser } from "./user";
 export interface IPost{
     id:number;
     content:string;
-    date:Date;
-    admin:IUser;
-    comments:IComment[];
-    reactions:IReaction[];
+    //date:Date;
+   // admin:IUser;
+  //  comments:IComment[];
+    //reactions:IReaction[];
 }

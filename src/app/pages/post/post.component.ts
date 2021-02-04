@@ -26,7 +26,7 @@ export class PostComponent implements OnInit {
   }
   */
  onDelete(){
-  this.deleted.emit(this.post.id);
+ // this.deleted.emit(this.post.id);
  }
 
 }

@@ -14,7 +14,7 @@ import { EventEmitter } from '@angular/core';
 export class UserComponent implements OnInit {
 
   
-@Input() user:any;
+@Input() user:IUser;
 //@Output() show: EventEmitter<any> = new EventEmitter<any>();
   constructor(private userService:UserService,private router: Router) { }
 

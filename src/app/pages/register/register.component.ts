@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-
+  formLogin:any={};
   constructor(private authService: AuthService,private token:TokenStorageService) { }
 
   ngOnInit(): void {
@@ -30,17 +30,8 @@ export class RegisterComponent implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         console.log("success");
-        /*
-        this.authService.login(data).subscribe( data => {
-          this.token.saveToken(data.accessToken);
-          this.token.saveUser(data);
-          console.log(data);
-        }
-        ,
-        err => {
-          this.errorMessage = err.error.message;
-         // this.isLoginFailed = true;
-        });*/
+       
+       
       },
       err => {
         this.errorMessage = err.error.message;
@@ -48,6 +39,18 @@ export class RegisterComponent implements OnInit {
         this.isSignUpFailed = true;
       }
     );
+    /*
+    this.authService.login(this.form).subscribe( data => {
+      this.token.saveToken(data.accessToken);
+      this.token.saveType(data.tokenType);
+      console.log(data);
+    }
+    ,
+    err => {
+      this.errorMessage = err.error.message;
+    
+    });
+    */
    // this.authService.login(this.form);
   }
 

@@ -115,7 +115,7 @@
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
                 <input class="form-control" placeholder="Password" type="password" name="password" required
-                  minlength="10" [(ngModel)]="form.password" #password="ngModel">
+                  minlength="6" [(ngModel)]="form.password" #password="ngModel">
               </div>
               <div class="alert-danger" *ngIf="password.touched && password.invalid">
                 <div *ngIf="password.errors.required">Password is required</div>
@@ -124,7 +124,8 @@
                 </div>
               </div>
             </div>
-            <div class="text-muted font-italic"><small>password strength: <span
+           <!--
+              <div class="text-muted font-italic"><small>password strength: <span
                   class="text-success font-weight-700">strong</span></small></div>
             <div class="row my-4">
               <div class="col-12">
@@ -136,6 +137,7 @@
                 </div>
               </div>
             </div>
+           -->
             <div class="text-center">
               <button type="submit" class="btn btn-primary mt-4" [disabled]="userForm.status!='VALID' || isSuccessful">
                 Create account</button>

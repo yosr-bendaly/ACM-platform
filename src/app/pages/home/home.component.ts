@@ -36,7 +36,7 @@ constructor(private postService:PostService,private tokenService:TokenStorageSer
 }
   ngOnInit():void {
 
-   //this.getAllPosts();
+   this.getAllPost();
 
  
 
@@ -59,12 +59,13 @@ this.postService.createPost(this.form).subscribe(
   }
 );
   }
-
+/*
   onPostDelete($event){
     this.postService.deletePost($event).subscribe(
       () => console.log('Delete successful')
     );
   }
+  */
 /*The component isn't expecting a result from the delete operation, so it subscribes without a callback. Even though you are not using the result, you still have to subscribe. 
 Calling the subscribe() method executes the observable, which is what initiates the DELETE request.
 An HttpClient method does not begin its HTTP request until you call subscribe() on the observable returned by that method. 
@@ -72,8 +73,8 @@ This is true for all HttpClient methods.
 Calling subscribe(...) triggers execution of the observable and causes HttpClient to compose and send the HTTP request to the server.
 */
 
-getAllPosts(){
-  this.postService.getAllPosts().subscribe(data=>this.posts=data);
+getAllPost(){
+  this.postService.getAllPost().subscribe(data=>this.posts=data);
 } 
 
 }

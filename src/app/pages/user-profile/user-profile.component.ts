@@ -16,11 +16,14 @@ export class UserProfileComponent implements OnInit {
   isSuccessful = false;
   isUpdateFailed = false;
   errorMessage = '';
+  
 
   constructor(private tokenstorage:TokenStorageService,private userService:UserService) { }
 
   ngOnInit() {
-   this.user=this.tokenstorage.getUser();
+    //this.userService.getUserById(this.tokenstorage.getToken()).subscribe(user=>this.user=user);
+    this.userService.getUserByToken().subscribe(user=>this.user=user)
+   //this.user=this.tokenstorage.getUser();
   
      /*
     this.userService.getUserById(this.user.id).subscribe(
@@ -37,7 +40,7 @@ export class UserProfileComponent implements OnInit {
 
   editProfile(){
     
-    this.userService.updateUser(this.user.id,this.form).subscribe(
+    this.userService.updateUser(this.tokenstorage.getToken(),this.form).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;

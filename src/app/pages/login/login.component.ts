@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.form).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+        this.tokenStorage.saveType(data.tokenType);//data
         console.log(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+        console.log("error:"+this.errorMessage)
       }
     );
     /*if(this.isLoggedIn){

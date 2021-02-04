@@ -4,9 +4,11 @@
    <div>
     <th scope="row">
       <div class="media align-items-center">
-        <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+       <!--
+          <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
           <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
         </a>
+       -->
         <div class="media-body">
           <span class="mb-0 text-sm">{{user.username}}</span>
         </div>
@@ -20,7 +22,7 @@
       <i class="bg-warning"></i> {{user.email}}
     </span>
   </td>
-  <td>
+ <!-- <td>
     <div class="avatar-group">
       <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
         <img alt="Image placeholder" src="../assets/img/theme/team-1-800x800.jpg" class="rounded-circle">
@@ -35,30 +37,32 @@
         <img alt="Image placeholder" src="../assets/img/theme/team-4-800x800.jpg" class="rounded-circle">
       </a>
     </div>
-  </td>
+  </td>-->
   <td>
     <div class="d-flex align-items-center">
-      <span class="mr-2">60%</span>
+      <span class="mr-2">{{user.score}}</span>
       <div>
-        <div class="progress">
+        <!--<div class="progress">
           <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-        </div>
+        </div>-->
       </div>
     </div>
   </td>
 
-  <td class="text-right">
+  <!--
+    <td class="text-right">
     <div ngbDropdown placement="bottom-right">
       <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
         <i class="fas fa-ellipsis-v"></i>
       </a>
       <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-        <a class="dropdown-item" >Show profile</a><!--(click)="goToDetails()"-->
+        <a class="dropdown-item" >Show profile</a>
         <a class="dropdown-item" href="javascript:void(0)">Follow</a>
      
       </div>
     </div>
   </td>
+  -->
  
 
 
